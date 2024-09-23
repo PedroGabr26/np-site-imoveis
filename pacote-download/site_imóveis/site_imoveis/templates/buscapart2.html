@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if resultados %}
+        <h2>Resultados Encontrados</h2>
+
+        {% for resultado in resultados %}
+        <l1>
+            {{ casa.area }} - {{casa.quartos}}
+            {{casa.bairro}} - {{casa.valor}}
+            {{casa.endereço}} 
+            {{casa.usuario}} 
+        </li>
+        {% empty %}
+            <h1>Nenhum resultado encontrado</h1>
+        {% endfor %}
+
+    {% endif %}
+</body>
+</html>

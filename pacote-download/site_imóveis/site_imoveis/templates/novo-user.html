@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: cornflowerblue;">
+    <form action="/novo_user/submit/" method="POST">
+        {% csrf_token %}
+        <div align="center">
+            <h2>NOVO USUÁRIO</h2>
+            <label for="">Usuario</label>
+            <input type="text" name="novo_user">
+            <label for="">Senha</label>
+            <input type="text" name="nova_senha">
+            <br>
+            <br>
+            <button type="submit">CRIAR USUÁRIO</button>
+            <br>
+            <br>
+            <a href="/login/">
+            <button type="button">CANCELAR</button>
+            </a>
+        </div>
+    </form>
+</body>
+</html>

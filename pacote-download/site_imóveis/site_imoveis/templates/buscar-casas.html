@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Busca</title>
+</head>
+<body>
+    <a href="/login/">LogOut</a>
+    <div align="center">
+        <h3>Resultados encontrados</h3>
+        {% if pesquisa %}
+            {% for resultado in resultados %}
+                <li>
+                    {{ resultado.endereco }}
+                </li>
+            {% empty %}
+                <h1>Nada encontrado</h1>
+            {% endfor %}
+        {% else %}
+            {% for casa in resultados %}
+                . {{ casa.endereco }} <br>
+            {% endfor %}
+        {% endif %}
+        </ul>
+    </div>
+</body>
+</html>

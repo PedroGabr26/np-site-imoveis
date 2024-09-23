@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVImoveis</title>
+</head>
+<body>
+    <h2>Venha ofertar sua casa no melhor site de Imóveis</h2>
+    <br>
+    <br>
+    <br>
+    <form action="/imoveis/vendacasa/submit/" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="">valor</label>
+            <br>
+            <input type="text" name="valor" value="{{ casa.valor }}">
+            <br>
+            <label for="">quartos</label>
+            <br>
+            <input type="text" name="quartos" value="{{ casa.quartos }}">
+            <br>
+            <label for="">area</label>
+            <br>
+            <input type="text" name="area" value="{{ casa.area }}">
+            <br>
+            <label for="">endereço</label>
+            <br>
+            <textarea name="endereco" rows="3" cols="28">{{ casa.endereco }}</textarea> <!--cols="60" rows="18"-->
+            <br>
+            <label for="">nome do bairro</label>
+            <br>
+            <input type="text" name="bairro" value="{{ casa.bairro }}">
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="submit">SALVAR</button>
+        </div>
+    </form>
+</body>
+</html>
