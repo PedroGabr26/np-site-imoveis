@@ -62,6 +62,7 @@ def tela_imoveis(request):
 
 
 
+
 #Ao apertar o botão "COMPRA CASA" abre a página para procurar uma casa para comprar
 @login_required(login_url="/login/")
 def compra_casa(request):
