@@ -7,7 +7,6 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
-
 # Create your views here.
 
 #Mostra a página inicial do site
