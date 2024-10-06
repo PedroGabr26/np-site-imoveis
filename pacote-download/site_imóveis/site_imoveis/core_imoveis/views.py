@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from core_imoveis.models import Casa, Bairro, User
 from django.shortcuts import redirect
 from django.http import HttpResponse
@@ -147,11 +147,16 @@ def edite_casa(request,id_casa):
 
 def delete_casa(request, id_casa):
     usuario = request.user #Pega o usuário atualmente da sessão
-    casa = Casa.objects.get(id=id_casa) # Busca a casa pelo ID fornecido
+    casa = get_object_or_404(Casa, id=id_casa) # Busca a casa pelo ID fornecido
     if usuario == casa.usuario: # Verifica se a casa pertence ao Usuário logado
         casa.delete() #se for o dono da casa, ela pode ser excluída
     return redirect('/imoveis/mostrarlista/')#Retorna pra lista de casas do usuário
 
 
 
-
+'''def delete_casa(request, id_casa):
+    usuario = request.user #Pega o usuário atualmente da sessão
+    casa = Casa.objects.get(Casa, id=id_casa) # Busca a casa pelo ID fornecido
+    if usuario == casa.usuario: # Verifica se a casa pertence ao Usuário logado
+        casa.delete() #se for o dono da casa, ela pode ser excluída
+    return redirect('/imoveis/mostrarlista/')#Retorna pra lista de casas do usuário'''
